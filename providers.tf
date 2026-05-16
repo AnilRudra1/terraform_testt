@@ -1,6 +1,14 @@
 terraform {
   required_version = ">= 0.12"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 2.70"
+    }
+  }
 }
 
-# Example provider placeholder — configure a provider when adding real resources.
-provider "local" {}
+provider "aws" {
+  region = var.aws_region
+}
